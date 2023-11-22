@@ -114,6 +114,8 @@ class Module extends AbstractModule
      */
     protected function initDataToPopulate(SettingsInterface $settings, string $settingsType, $id = null, iterable $values = []): bool
     {
+        /** @var \Omeka\Settings\AbstractTargetSettings $settings */
+
         // This method is not in the interface, but is set for config, site and
         // user settings.
         if (!method_exists($settings, 'getTableName')) {
@@ -243,8 +245,10 @@ class Module extends AbstractModule
             return true;
         }
 
+        /** @var \Laminas\Http\Request $request */
+        $request = $controller->getRequest();
         // Get submitted POST data.
-        $params = $controller->getRequest()->getPost();
+        $params = $request->getPost();
 
         // Load the form object and validate the submitted data.
         $form = $formManager->get($formClass);
