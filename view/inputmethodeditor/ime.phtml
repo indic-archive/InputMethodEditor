@@ -1,0 +1,17 @@
+$( document ).ready( function () {
+    options = {
+        "imePath": "<?php echo $ime_absolute_path; ?>"
+    };
+    <?php if (!empty($languages)) : ?>
+    options.languages = []
+    <?php foreach ($languages as $language_code) : ?>
+    options.languages.push('<?php echo $language_code; ?>');
+    <?php endforeach; ?>
+    <?php endif; ?>
+    $( '<?php echo $elements_to_enable; ?>' )
+        .ime(options);
+    $.ime.load("<?php echo $default_input_method; ?>")
+        .done(function(){
+            $.ime.preferences.setIM("<?php echo $default_input_method; ?>");
+        });
+});
