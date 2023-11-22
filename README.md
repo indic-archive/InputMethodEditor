@@ -19,8 +19,8 @@ See general end user documentation for [Installing a module](http://omeka.org/s/
 ## Screenshot
 
 - Typing
-![](screenshots/typing-malaylam-in-search-field.png)
+![Using in the search field](screenshots/typing-malaylam-in-search-field.png)
 
 - Admin
-![](screenshots/configure.png)
+![Configure](screenshots/configure.png)
 
