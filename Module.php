@@ -57,7 +57,7 @@ class Module extends AbstractModule
         $services = $this->getServiceLocator();
         $settings = $services->get('Omeka\Settings');
 
-        $languages = explode(',', $settings->get('inputmethodeditor_languages'));
+        $languages = explode(',', $settings->get('inputmethodeditor_languages') ?? '');
         array_walk($languages, 'trim');
 
         return array_filter($languages);
