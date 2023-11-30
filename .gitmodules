@@ -1,3 +1,4 @@
 [submodule "asset/jquery.ime"]
 	path = asset/jquery.ime
 	url = https://github.com/junaidpv/jquery.ime.git
+	branch = indic-archive
